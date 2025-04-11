@@ -1,0 +1,28 @@
+{
+    "name": "clvarley/example-php",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^6.10",
+        "phpunit/phpunit": "^12.1",
+        "friendsofphp/php-cs-fixer": "^3.75"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clvarley\\Utility\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "tests": "@php vendor/bin/phpunit",
+        "style": "@php vendor/bin/php-cs-fixer fix --diff",
+        "psalm": "@php vendor/bin/psalm --show-info=true"
+    }
+}
