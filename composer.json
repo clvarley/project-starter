@@ -3,12 +3,12 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^8.0"
+        "php": "^8.3"
     },
     "require-dev": {
-        "vimeo/psalm": "^6.10",
-        "phpunit/phpunit": "^12.1",
-        "friendsofphp/php-cs-fixer": "^3.75"
+        "vimeo/psalm": "^6.14",
+        "phpunit/phpunit": "^12.5",
+        "friendsofphp/php-cs-fixer": "^3.92"
     },
     "autoload": {
         "psr-4": {
