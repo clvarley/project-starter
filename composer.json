@@ -12,18 +12,18 @@
     },
     "autoload": {
         "psr-4": {
-            "{{YourNamespace}}\\": "src/"
+            "__YourNamespace__\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "{{YourNamespace}}\\Tests\\": "tests/"
+            "__YourNamespace__\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test:unit": "@php vendor/bin/phpunit --testsuite=unit --no-coverage",
-        "test:feature": "@php vendor/bin/phpunit --testsuite=feature --no-coverage",
-        "tests": ["@test:unit", "@test:feature"],
+        "tests:unit": "@php vendor/bin/phpunit --testsuite=unit --no-coverage",
+        "tests:feature": "@php vendor/bin/phpunit --testsuite=feature --no-coverage",
+        "tests": ["@tests:unit", "@tests:feature"],
         "coverage": "@php -d xdebug.mode=coverage vendor/bin/phpunit --testsuite=unit",
         "style": "@php vendor/bin/php-cs-fixer fix --diff",
         "psalm": "@php vendor/bin/psalm --show-info=true"
