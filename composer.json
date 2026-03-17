@@ -1,27 +1,30 @@
 {
     "name": "clvarley/example-php",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "require": {
         "php": "^8.3"
     },
     "require-dev": {
-        "vimeo/psalm": "^6.14",
+        "vimeo/psalm": "^6.16",
         "phpunit/phpunit": "^12.5",
-        "friendsofphp/php-cs-fixer": "^3.92"
+        "friendsofphp/php-cs-fixer": "^3.94"
     },
     "autoload": {
         "psr-4": {
-            "Clvarley\\Utility\\": "src/"
+            "{{YourNamespace}}\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "{{YourNamespace}}\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "tests": "@php vendor/bin/phpunit",
+        "test:unit": "@php vendor/bin/phpunit --testsuite=unit --no-coverage",
+        "test:feature": "@php vendor/bin/phpunit --testsuite=feature --no-coverage",
+        "tests": ["@test:unit", "@test:feature"],
+        "coverage": "@php -d xdebug.mode=coverage vendor/bin/phpunit --testsuite=unit",
         "style": "@php vendor/bin/php-cs-fixer fix --diff",
         "psalm": "@php vendor/bin/psalm --show-info=true"
     }
